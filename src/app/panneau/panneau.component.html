@@ -1,0 +1,40 @@
+<div>
+    <label for="name">Dis bonjour à </label>
+    <input id="name" [(ngModel)]="panneau.name" placeholder="name">
+</div>
+<div>
+    <label for="size">Taille </label>
+    <input id="size" [(ngModel)]="panneau.size" placeholder="size">
+</div>
+
+<div>
+    <label for="font">Police </label>
+
+    <select name="fonts" id="font" [(ngModel)]="panneau.font">
+        <option value="Arial, Helvetica, sans-serif">Arial, Helvetica, sans-serif</option>
+        <option value="Times New Roman,Times, serif">Times New Roman,Times, serif</option>
+        <option value="Georgia, Times New Roman, Times, serif">Georgia, Times New Roman, Times, serif</option>
+    </select>
+</div>
+
+<div>
+    <label for="align">Alignement </label>
+    <div>
+        <input type="radio" id="left" [(ngModel)]="panneau.align" name="align" value="left" checked>
+        <label for="left">Left</label>
+    </div>
+
+    <div>
+        <input type="radio" id="center" [(ngModel)]="panneau.align" name="align" value="center">
+        <label for="center">Center</label>
+    </div>
+
+    <div>
+        <input type="radio" id="right" [(ngModel)]="panneau.align" name="align" value="right">
+        <label for="right">Right</label>
+    </div>
+</div>
+
+<div [style.font-size.px]=setSize() [style.text-align]=setAlign() [style.font-family]=setFont()>
+    <h2>Hello {{panneau.name | uppercase}} !</h2>
+</div>
